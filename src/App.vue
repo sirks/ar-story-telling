@@ -12,6 +12,7 @@
   }
 </script>
 <style>
+
   #app {
     width: 100%;
     height: 100%;
@@ -25,8 +26,6 @@
     position: absolute;
     width: 100vw;
     height: 56.25vw;
-    font-size: 1.6vw;
-    font-family: monospace;
     color: #111;
   }
 </style>

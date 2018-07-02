@@ -17,7 +17,7 @@
   .dot {
     height: 2vw;
     width: 2vw;
-    background-color: #8e8;
+    background-color: #ff765d;
     border-radius: 50%;
     border: 0.15vw solid #555;
     display: inline-block;

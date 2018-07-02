@@ -2,22 +2,38 @@
   <div class='home'>
     <div class='container'>
       <img class='background' src='./background.png'>
+      <img class='car' src='./car.png'>
+      <img class='smoke' src='./smoke.gif'>
       <div class='video-container' :class="{ visible: videoVisible }">
         <div @click="videoVisible = false" class='overlay'></div>
         <Video src='https://www.youtube.com/embed/2S2qtGisT34'></Video>
       </div>
-      <div class='text-container'>
-        <Txt
-          txt='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'>
-        </Txt>
-      </div>
+      <!--<div class='text-container'>-->
+      <!--<Typer-->
+      <!--txt='The truck you are travelling in gets stopped at the check point. You-->
+      <!--show them your passports, but the militants demand money from-->
+      <!--you. If you give the money, the total sum would be almost all of your-->
+      <!--savings. By giving your savings to the militants it could cause you a-->
+      <!--lot of trouble further on the road as you would not be able to pay-->
+      <!--anything to nobody if necessary.'>-->
+      <!--</Typer>-->
+      <!--</div>-->
       <div @click="videoVisible=true">
         <Dot></Dot>
       </div>
+      <TextSlide
+        story='The truck you are travelling in gets stopped at the check point. You show them your passports, but the militants demand money from you. If you give the money, the total sum would be almost all of your savings. By giving your savings to the militants it could cause you a lot of trouble further on the road as you would not be able to pay anything to nobody if necessary.'
+        question='Do you give them the money or do you try to negotiate with them?'></TextSlide>
     </div>
-    <div class='option-cointainer'>
-      <router-link class='option' to="/e2">Bribe border guards</router-link>
-      <router-link class='option' to="/e3">Chose a different route</router-link>
+    <div class='footer'>
+      <div class='nav'>
+        <router-link :to="'home'"><img src='../../assets/return.png'></router-link>
+        <a><img src='../../assets/left-arrow.png'></a>
+      </div>
+      <div class='option-cointeiner'>
+        <router-link class='option big' to="/e2">GIVE</router-link>
+        <router-link class='option big' to="/e3">NEGOTIATE</router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -26,13 +42,15 @@
   import {Component, Vue} from 'vue-property-decorator';
   import Video from '@/components/Video.vue';
   import Dot from '@/components/Dot.vue';
-  import Txt from '@/components/Txt.vue';
+  import Typer from '@/components/Typer.vue';
+  import TextSlide from '@/components/TextSlide.vue';
 
   @Component({
     components: {
       Video,
       Dot,
-      Txt
+      Typer,
+      TextSlide,
     },
   })
   export default class Home extends Vue {
@@ -44,6 +62,7 @@
 <style scoped>
 
   .container {
+    position: relative;
     width: 100%;
     height: 85%;
   }
@@ -53,29 +72,48 @@
     height: 100%;
   }
 
-  .option-cointainer {
+  .footer {
     display: flex;
+    flex-direction: row;
     width: 100%;
-    height: 15%;
+    height: 13%;
+    justify-content: stretch;
+  }
+
+  .nav {
+    display: flex;
+    width: 10%;
+    align-items: center;
+    padding: 0 2%;
+  }
+
+  .nav img {
+    width: 80%;
+    height: 80%;
+    padding-right: 20%;
+  }
+
+  .option-cointeiner {
+    display: flex;
+    width: 90%;
+    height: 100%;
     justify-content: space-around;
   }
 
-  .option{
+  .option {
     display: flex;
-    width: 300px;
-    font-size: 2vw;
-    color:inherit;
-    /*border-radius: 0 0 3vw 3vw;*/
-    border-bottom: 0.3vw solid #555;
-    justify-content: center;
+    padding: 0 5%;
     flex-direction: column;
+    font-size: 3vw;
+    color: inherit;
+    justify-content: center;
     text-align: center;
     text-decoration: none;
   }
 
-  .option:hover{
-    color: #ff765d;
-    font-weight: 700;
+  .option.big {
+    max-width: 250px;
+    border-bottom: 0.3vw solid #555;
   }
 
   .video-container {
@@ -112,7 +150,7 @@
     left: 51%;
     opacity: 0;
     animation: appear 2s forwards;
-    animation-delay: 2s;
+    animation-delay: 1s;
   }
 
   @keyframes appear {
@@ -122,6 +160,28 @@
     to {
       opacity: 1;
     }
+  }
+
+  .car {
+    position: absolute;
+    top: 35%;
+    left: -74%;
+    height: 70%;
+    animation: drive 10s forwards;
+    animation-delay: 2s;
+  }
+
+  @keyframes drive {
+    to {
+      left: -20%;
+    }
+  }
+
+  .smoke {
+    position: absolute;
+    top: 53%;
+    left: 78%;
+    height: 22%;
   }
 
   .text-container {
