@@ -3,6 +3,11 @@
     <div class='container'>
       <img class='background' src='./background.png'>
       <img class='car' src='./car.png'>
+      <audio id="dickAudio">
+        <source src="./mobydick_1_2.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class='car-click' @click='toggleAudio'></div>
       <img class='smoke' src='./smoke.gif'>
       <div class='video-container' :class="{ visible: videoVisible }">
         <div @click="videoVisible = false" class='overlay'></div>
@@ -55,6 +60,19 @@
   })
   export default class Home extends Vue {
     private videoVisible = false;
+    private playing = false;
+
+    private toggleAudio() {
+      const audio: any = document.getElementById("dickAudio");
+      if (this.playing) {
+        audio.pause();
+        this.playing = false;
+      }
+      else {
+        audio.play();
+        this.playing = true;
+      }
+    }
 
   }
 </script>
@@ -175,6 +193,17 @@
     to {
       left: -20%;
     }
+  }
+
+  .car-click {
+    position: absolute;
+    width: 64%;
+    height: 55%;
+    top: 45%;
+    left: -10%;
+    border-radius: 0 80% 33% 0;
+    opacity: 0.2;
+    background-color: lightpink;
   }
 
   .smoke {
