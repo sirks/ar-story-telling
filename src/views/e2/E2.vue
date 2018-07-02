@@ -6,16 +6,6 @@
         <div @click="videoVisible = false" class='overlay'></div>
         <Video src='https://www.youtube.com/embed/2S2qtGisT34'></Video>
       </div>
-      <div class='text-container'>
-        <Typer
-          txt='The truck you are travelling in gets stopped at the check point. You
-show them your passports, but the militants demand money from
-you. If you give the money, the total sum would be almost all of your
-savings. By giving your savings to the militants it could cause you a
-lot of trouble further on the road as you would not be able to pay
-anything to nobody if necessary.'>
-        </Typer>
-      </div>
       <div @click="videoVisible=true">
         <Dot></Dot>
       </div>
@@ -26,13 +16,21 @@ anything to nobody if necessary.'>
         <a @click="$router.back()"><img src='../../assets/left-arrow.png'></a>
       </div>
       <div class='option-cointeiner'>
-        <router-link class='option big' to="/e2">GIVE</router-link>
-        <router-link class='option big' to="/e3">NEGOTIATE</router-link>
+        <router-link class='option big' to="/e2">PROTEST</router-link>
+        <router-link class='option big' to="/e3">JUMP THE BOAT</router-link>
       </div>
     </div>
     <TextSlide
-      story='The truck you are travelling in gets stopped at the check point. You show them your passports, but the militants demand money from you. If you give the money, the total sum would be almost all of your savings. By giving your savings to the militants it could cause you a lot of trouble further on the road as you would not be able to pay anything to nobody if necessary.'
-      question='Do you give them the money or do you try to negotiate with them?'></TextSlide>
+      story='The militants take your money and let you go. When you arrive at
+the port, the boat is already full with people. Smugglers ensure that
+further in the international waters another, bigger boat awaits.
+When your reach the bigger boat, you can see that it is very crowded
+as well. The smuggler tells everybody on your boat that you need to
+jump over to the other boat. It is very windy, the waves are big and it
+makes it very hard for you and your family to jump over. Some
+people start to protest towards smugglers saying, that they will stay
+on the small boat. They ask for your support to do the same.'
+      question='Do you protest or do you jump over to the bigger boat?'></TextSlide>
   </div>
 </template>
 

@@ -3,32 +3,26 @@
     <div class='container'>
       <img class='background' src='./background.png'>
       <img class='car' src='./car.png'>
+      <div class='car-click' @click='toggleAudio'></div>
       <audio id="audio">
         <source src="./audio.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
       </audio>
-      <div class='car-click' @click='toggleAudio'></div>
       <img class='smoke' src='./smoke.gif'>
       <div class='video-container' :class="{ visible: videoVisible }">
         <div @click="videoVisible = false" class='overlay'></div>
         <Video src='https://www.youtube.com/embed/2S2qtGisT34'></Video>
       </div>
-      <!--<div class='text-container'>-->
-      <!--<Typer-->
-      <!--txt='The truck you are travelling in gets stopped at the check point. You-->
-      <!--show them your passports, but the militants demand money from-->
-      <!--you. If you give the money, the total sum would be almost all of your-->
-      <!--savings. By giving your savings to the militants it could cause you a-->
-      <!--lot of trouble further on the road as you would not be able to pay-->
-      <!--anything to nobody if necessary.'>-->
-      <!--</Typer>-->
-      <!--</div>-->
+      <div class='text-container'>
+        <Typer
+          txt='Do you give them the money or do you try to negotiate with them?'>
+        </Typer>
+      </div>
       <div @click="videoVisible=true">
         <Dot></Dot>
       </div>
       <TextSlide
         story='The truck you are travelling in gets stopped at the check point. You show them your passports, but the militants demand money from you. If you give the money, the total sum would be almost all of your savings. By giving your savings to the militants it could cause you a lot of trouble further on the road as you would not be able to pay anything to nobody if necessary.'
-        question='Do you give them the money or do you try to negotiate with them?'></TextSlide>
+      ></TextSlide>
     </div>
     <div class='footer'>
       <div class='nav'>
@@ -82,7 +76,7 @@
   .container {
     position: relative;
     width: 100%;
-    height: 85%;
+    height: 86%;
   }
 
   .background {
@@ -94,7 +88,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 13%;
+    height: 12%;
     justify-content: stretch;
   }
 
@@ -119,13 +113,10 @@
   }
 
   .option {
-    display: flex;
     padding: 0 5%;
-    flex-direction: column;
-    font-size: 3vw;
+    font-size: 3.5vw;
+    font-weight: bold;
     color: inherit;
-    justify-content: center;
-    text-align: center;
     text-decoration: none;
   }
 
@@ -183,27 +174,25 @@
   .car {
     position: absolute;
     top: 35%;
-    left: -74%;
-    height: 70%;
-    animation: drive 10s forwards;
+    left: -55%;
+    height: 64%;
+    animation: drive 8s forwards;
     animation-delay: 2s;
   }
 
   @keyframes drive {
     to {
-      left: -20%;
+      left: -21%;
     }
   }
 
   .car-click {
     position: absolute;
-    width: 64%;
-    height: 55%;
-    top: 45%;
-    left: -10%;
-    border-radius: 0 80% 33% 0;
-    opacity: 0.2;
-    background-color: lightpink;
+    width: 34%;
+    height: 42%;
+    top: 46%;
+    border-radius: 0 100% 20% 0;
+    opacity: 0;
   }
 
   .smoke {
@@ -215,9 +204,11 @@
 
   .text-container {
     position: absolute;
-    width: 50%;
-    height: 25%;
-    top: 59%;
-    left: 37%;
+    width: 39%;
+    height: 16%;
+    top: 76%;
+    left: 36%;
+    font-size: 2.5vw;
+    font-weight: bold;
   }
 </style>

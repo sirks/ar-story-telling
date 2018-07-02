@@ -9,6 +9,13 @@
 
   @Component
   export default class App extends Vue {
+    mounted() {
+      debugger;
+      if (document.fullscreenEnabled) {
+        // supported
+        document.documentElement.requestFullscreen();
+      }
+    }
   }
 </script>
 <style>
@@ -25,7 +32,7 @@
   .view {
     position: absolute;
     width: 100vw;
-    height: 56.25vw;
+    height: 45vw;
     color: #111;
   }
 </style>

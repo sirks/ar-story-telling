@@ -18,10 +18,10 @@
     width: 640px;
     height: 360px;
   }
-  @media (max-width:639px){
+  @media (max-width:640px){
     #video{
-      width: 100vw;
-      height: 56.25vw;
+      width: 80vw;
+      height: 40vw;
     }
   }
 
