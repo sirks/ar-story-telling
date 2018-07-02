@@ -3,8 +3,8 @@
     <div class='container'>
       <img class='background' src='./background.png'>
       <img class='car' src='./car.png'>
-      <audio id="dickAudio">
-        <source src="./mobydick_1_2.mp3" type="audio/mpeg">
+      <audio id="audio">
+        <source src="./audio.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
       <div class='car-click' @click='toggleAudio'></div>
@@ -63,7 +63,7 @@
     private playing = false;
 
     private toggleAudio() {
-      const audio: any = document.getElementById("dickAudio");
+      const audio: any = document.getElementById("audio");
       if (this.playing) {
         audio.pause();
         this.playing = false;
