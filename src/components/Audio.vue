@@ -42,11 +42,12 @@
   .audio {
     position: absolute;
     text-align: center;
+    width: 5vw;
     bottom: 0;
     right: 0;
   }
 
   .audio img {
-    width: 4.5vw;
+    width: 90%;
   }
 </style>

@@ -27,25 +27,6 @@
     @Prop() private audioSrc!: string;
 
     private isOpen: boolean = false;
-
-    mounted() {
-      if (this.$store.state.audioPlaying) {
-        const audioRef: any = this.$refs.audioRef;
-        audioRef.play();
-      }
-    }
-
-    private toggleAudio() {
-      const audioRef: any = this.$refs.audioRef;
-      if (this.$store.state.audioPlaying) {
-        audioRef.pause();
-        this.$store.state.audioPlaying = false;
-      }
-      else {
-        audioRef.play();
-        this.$store.state.audioPlaying = true;
-      }
-    }
   }
 </script>
 
@@ -56,7 +37,7 @@
     top: 0;
     left: 95vw;
     height: 100%;
-    width: 65vw;
+    width: 70vw;
     transition: left 1s;
   }
 
