@@ -2,12 +2,6 @@
   <div class='home'>
     <div class='container'>
       <img class='background' src='./background.png'>
-      <img class='car' src='./car.png'>
-      <div class='car-click' @click='toggleAudio'></div>
-      <audio id="audio">
-        <source src="./audio.mp3" type="audio/mpeg">
-      </audio>
-      <img class='smoke' src='./smoke.gif'>
       <div class='video-container' :class="{ visible: videoVisible }">
         <div @click="videoVisible = false" class='overlay'></div>
         <Video src='https://www.youtube.com/embed/2S2qtGisT34'></Video>
@@ -24,7 +18,7 @@
         story='The truck you are travelling in gets stopped at the check point. You show them your passports, but the militants demand money from you. If you give the money, the total sum would be almost all of your savings. By giving your savings to the militants it could cause you a lot of trouble further on the road as you would not be able to pay anything to nobody if necessary.'
       ></TextSlide>
     </div>
-    <Footer :buttons='buttons' :backDisabled='true'></Footer>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -34,7 +28,7 @@
   import Dot from '@/components/Dot.vue';
   import Typer from '@/components/Typer.vue';
   import TextSlide from '@/components/TextSlide.vue';
-  import Footer, {Button} from '@/components/Footer.vue';
+  import Footer from '@/components/Footer.vue';
 
   @Component({
     components: {
@@ -45,26 +39,9 @@
       Footer,
     },
   })
-  export default class Home extends Vue {
-    private readonly buttons: Button[] = [
-      {name: 'GIVE', link: '/give'},
-      {name: 'NEGOTIATE', link: '/negotiate'},
-    ];
+  export default class Protest extends Vue {
 
     private videoVisible = false;
-    private playing = false;
-
-    private toggleAudio() {
-      const audio: any = document.getElementById("audio");
-      if (this.playing) {
-        audio.pause();
-        this.playing = false;
-      }
-      else {
-        audio.play();
-        this.playing = true;
-      }
-    }
 
   }
 </script>

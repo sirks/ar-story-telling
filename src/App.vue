@@ -8,15 +8,7 @@
   import {Component, Vue} from 'vue-property-decorator';
 
   @Component
-  export default class App extends Vue {
-    mounted() {
-      debugger;
-      if (document.fullscreenEnabled) {
-        // supported
-        document.documentElement.requestFullscreen();
-      }
-    }
-  }
+  export default class App extends Vue {}
 </script>
 <style>
 
