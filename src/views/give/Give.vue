@@ -7,16 +7,15 @@
         <Video src='https://www.youtube.com/embed/2S2qtGisT34'></Video>
       </div>
       <div class='text-container'>
-        <Typer
-          txt='Do you give them the money or do you try to negotiate with them?'>
-        </Typer>
+        Do you protest or do you jump over to the bigger boat?
       </div>
       <div @click="videoVisible=true">
         <Dot></Dot>
       </div>
-      <TextSlide
-        story='The truck you are travelling in gets stopped at the check point. You show them your passports, but the militants demand money from you. If you give the money, the total sum would be almost all of your savings. By giving your savings to the militants it could cause you a lot of trouble further on the road as you would not be able to pay anything to nobody if necessary.'
-      ></TextSlide>
+      <Slider
+        story='The militants take your money and let you go. When you arrive at the port, the boat is already full with people. Smugglers ensure that further in the international waters another, bigger boat awaits. When your reach the bigger boat, you can see that it is very crowded as well. The smuggler tells everybody on your boat that you need to jump over to the other boat. It is very windy, the waves are big and it makes it very hard for you and your family to jump over. Some people start to protest towards smugglers saying, that they will stay on the small boat. They ask for your support to do the same.'
+        audioSrc='/audio/give.mp3'
+      ></Slider>
     </div>
     <Footer :buttons='buttons'></Footer>
   </div>
@@ -27,7 +26,7 @@
   import Video from '@/components/Video.vue';
   import Dot from '@/components/Dot.vue';
   import Typer from '@/components/Typer.vue';
-  import TextSlide from '@/components/TextSlide.vue';
+  import Slider from '@/components/Slider.vue';
   import Footer, {Button} from '@/components/Footer.vue';
 
   @Component({
@@ -35,7 +34,7 @@
       Video,
       Dot,
       Typer,
-      TextSlide,
+      Slider,
       Footer,
     },
   })
@@ -109,37 +108,6 @@
     }
   }
 
-  .car {
-    position: absolute;
-    top: 35%;
-    left: -55%;
-    height: 64%;
-    animation: drive 8s forwards;
-    animation-delay: 2s;
-  }
-
-  @keyframes drive {
-    to {
-      left: -21%;
-    }
-  }
-
-  .car-click {
-    position: absolute;
-    width: 34%;
-    height: 42%;
-    top: 46%;
-    border-radius: 0 100% 20% 0;
-    opacity: 0;
-  }
-
-  .smoke {
-    position: absolute;
-    top: 53%;
-    left: 78%;
-    height: 22%;
-  }
-
   .text-container {
     position: absolute;
     width: 39%;
@@ -148,5 +116,8 @@
     left: 36%;
     font-size: 2.5vw;
     font-weight: bold;
+    opacity: 0;
+    animation: appear 2s forwards;
+    animation-delay: 2s;
   }
 </style>

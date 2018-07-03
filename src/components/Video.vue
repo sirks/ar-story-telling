@@ -14,12 +14,14 @@
 </script>
 
 <style>
-  #video{
+  #video {
+    position: absolute;
     width: 640px;
     height: 360px;
   }
-  @media (max-width:640px){
-    #video{
+
+  @media (max-width: 640px) {
+    #video {
       width: 80vw;
       height: 40vw;
     }

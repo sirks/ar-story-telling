@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Vuex from 'vuex'
 import App from './App.vue'
 import Home from './views/home/Home.vue'
 import Give from './views/give/Give.vue'
@@ -8,8 +9,9 @@ import Protest from './views/protest/Protest.vue'
 import JumpTheBoat from './views/jump-the-boat/JumpTheBoat.vue'
 
 Vue.config.productionTip = false;
-
 Vue.use(VueRouter);
+Vue.use(Vuex);
+
 const router = new VueRouter({
   mode: 'history',
   base: __dirname,
@@ -24,7 +26,11 @@ const router = new VueRouter({
   ]
 });
 
+const state = {audioPlaying: true};
+const store = new Vuex.Store({state});
+
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app');

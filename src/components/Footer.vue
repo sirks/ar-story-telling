@@ -65,7 +65,6 @@
   }
 
   .option.big {
-    max-width: 250px;
     border-bottom: 0.3vw solid #555;
   }
 </style>

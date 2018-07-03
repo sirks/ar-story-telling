@@ -6,17 +6,10 @@
         <div @click="videoVisible = false" class='overlay'></div>
         <Video src='https://www.youtube.com/embed/2S2qtGisT34'></Video>
       </div>
-      <div class='text-container'>
-        <Typer
-          txt='Do you give them the money or do you try to negotiate with them?'>
-        </Typer>
-      </div>
       <div @click="videoVisible=true">
         <Dot></Dot>
       </div>
-      <TextSlide
-        story='The truck you are travelling in gets stopped at the check point. You show them your passports, but the militants demand money from you. If you give the money, the total sum would be almost all of your savings. By giving your savings to the militants it could cause you a lot of trouble further on the road as you would not be able to pay anything to nobody if necessary.'
-      ></TextSlide>
+      <Audio audioSrc='/audio/jump-the-boat.mp3'></Audio>
     </div>
     <Footer></Footer>
   </div>
@@ -26,16 +19,14 @@
   import {Component, Vue} from 'vue-property-decorator';
   import Video from '@/components/Video.vue';
   import Dot from '@/components/Dot.vue';
-  import Typer from '@/components/Typer.vue';
-  import TextSlide from '@/components/TextSlide.vue';
+  import Audio from '@/components/Audio.vue';
   import Footer from '@/components/Footer.vue';
 
   @Component({
     components: {
       Video,
       Dot,
-      Typer,
-      TextSlide,
+      Audio,
       Footer,
     },
   })
