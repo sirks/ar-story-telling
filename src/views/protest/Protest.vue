@@ -1,7 +1,7 @@
 <template>
   <div class='home'>
     <div class='container'>
-      <img class='background' src='./background.png'>
+      <img class='background' src='../jump-the-boat/background.png'>
       <div class='video-container' :class="{ visible: videoVisible }">
         <div @click="videoVisible = false" class='overlay'></div>
         <Video src='https://www.youtube.com/embed/2S2qtGisT34'></Video>
