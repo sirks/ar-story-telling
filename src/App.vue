@@ -1,5 +1,5 @@
 <template>
-  <div id='app'>
+  <div id='app' class='fill'>
     <router-view class='view'></router-view>
   </div>
 </template>
@@ -13,8 +13,6 @@
 <style>
 
   #app {
-    width: 100%;
-    height: 100%;
     position: fixed;
     display: flex;
     align-items: center;

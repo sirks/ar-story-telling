@@ -1,5 +1,5 @@
 <template>
-  <div class='start'>
+  <div class='start fill'>
     <router-link class='button' :to="'home'">START</router-link>
   </div>
 </template>
@@ -20,8 +20,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
   }
 
   .button {

@@ -1,8 +1,8 @@
 <template>
   <div class='slider' :class="{ open: isOpen }">
     <div @click="isOpen=!isOpen" class='open-bar'>
-      <div class='overlay'></div>
-      <img class="slide" src='../assets/left-arrow-slide.png'>
+      <div class='overlay fill'></div>
+      <img class="slide icon" src='../assets/left-arrow-slide.png'>
       <Audio :audioSrc='audioSrc'></Audio>
     </div>
     <div class='content'>
@@ -47,10 +47,7 @@
 
   .open-bar img.slide {
     position: absolute;
-    width: 180%;
     top: 40%;
-    left: -40%;
-    opacity: 0.7;
     transition: transform 1s;
   }
 
@@ -66,8 +63,6 @@
   .open-bar .overlay {
     background-color: white;
     opacity: 0.4;
-    width: 100%;
-    height: 100%;
   }
 
   .content {

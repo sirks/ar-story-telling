@@ -4,6 +4,16 @@ body {
   font-size: 2vw;
 }
 
-a{
+a {
   cursor: pointer;
+}
+
+.icon {
+  width: 4.5vw;
+  height: 4.5vw;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
 }

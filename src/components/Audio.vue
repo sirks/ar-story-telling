@@ -1,7 +1,7 @@
 <template>
   <div class='audio' @click.stop='toggleAudio'>
-    <img v-if="$store.state.audioPlaying" src='../assets/pause.png'>
-    <img v-else src='../assets/play.png'>
+    <img class='icon' v-if="$store.state.audioPlaying" src='../assets/pause.png'>
+    <img class='icon' v-else src='../assets/play.png'>
     <audio ref="audioRef">
       <source :src='audioSrc' type="audio/mpeg">
     </audio>
@@ -38,16 +38,11 @@
 
 <style scoped>
 
-
   .audio {
     position: absolute;
     text-align: center;
     width: 5vw;
     bottom: 0;
     right: 0;
-  }
-
-  .audio img {
-    width: 90%;
   }
 </style>

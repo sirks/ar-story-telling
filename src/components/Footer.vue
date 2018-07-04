@@ -1,8 +1,8 @@
 <template>
   <div class='footer'>
     <div class='nav'>
-      <router-link :to="'home'"><img src='../assets/return.png'></router-link>
-      <a @click="backDisabled?'':$router.back()"><img src='../assets/left-arrow.png'></a>
+      <router-link class='icon' :to="'home'"><img src='../assets/return.png'></router-link>
+      <a class='icon' @click="backDisabled?'':$router.back()"><img src='../assets/left-arrow.png'></a>
     </div>
     <div class='option-cointeiner'>
       <router-link v-for="button in buttons" class='option big' :to="button.link">{{button.name}}</router-link>
@@ -33,20 +33,19 @@
     flex-direction: row;
     width: 100%;
     height: 12%;
-    justify-content: stretch;
   }
 
   .nav {
     display: flex;
     width: 10%;
-    align-items: flex-end;
+    height: 100%;
     padding: 0 2%;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .nav img {
-    width: 80%;
-    height: 80%;
-    padding-right: 20%;
+  .nav img{
+    width:100%;
   }
 
   .option-cointeiner {
@@ -57,8 +56,8 @@
   }
 
   .option {
-    padding: 0 5% 1%;
-    font-size: 3.5vw;
+    padding: 0 5%;
+    font-size: 4vw;
     font-weight: bold;
     color: inherit;
     text-decoration: none;

@@ -1,22 +1,21 @@
 <template>
   <div class='home'>
     <div class='container'>
-      <img class='background' src='./background.png'>
+      <img class='fill' src='./background.png'>
       <img class='car' src='./car.png'>
       <img class='smoke' src='./smoke.gif'>
-      <div class='video-container' :class="{ visible: videoVisible }">
-        <div @click="videoVisible = false" class='overlay'></div>
-        <Video src='https://www.youtube.com/embed/2S2qtGisT34'></Video>
-      </div>
-      <InfoText html='<b>The truck you are travelling in gets stopped at the check point. You show them your passports, but the militants demand money from you. If you give the money, the total sum would be almost all of your savings. By giving your savings to the militants it could cause you a lot of trouble further on the road as you would not be able to pay anything to nobody if necessary.</b>'></InfoText>
+      <img src='../../assets/video.png' class='video-icon icon' @click="videoToggle">
+      <Info :visible='videoVisible' :toggle='videoToggle'>
+        <iframe width="640" height="360" id="video" src='https://www.youtube.com/embed/2S2qtGisT34'
+                allow="autoplay; encrypted-media" frameborder="0" webkitallowfullscreen mozallowfullscreen
+                allowfullscreen></iframe>
+      </Info>
+      <img src='../../assets/info.png' class='info-text icon' @click="infoTextToggle">
+      <Info :visible='infoTextVisible' :toggle='infoTextToggle'>
+        <img class='info-graph' src='../../assets/info-graph-price.png'>
+      </Info>
       <div class='text-container'>
-        Do you give them the money or do you try to negotiate with them?
-      </div>
-      <div class='video-dot' @click="videoVisible=true">
-        <Dot></Dot>
-      </div>
-      <div class='info-text-dot' @click="infoTextVisible = !infoTextVisible">
-        <Dot></Dot>
+        Do you give the money or do you try to negotiate?
       </div>
       <Slider
         story='The truck you are travelling in gets stopped at the check point. You show them your passports, but the militants demand money from you. If you give the money, the total sum would be almost all of your savings. By giving your savings to the militants it could cause you a lot of trouble further on the road as you would not be able to pay anything to nobody if necessary.'
@@ -30,18 +29,14 @@
 
 <script lang='ts'>
   import {Component, Vue} from 'vue-property-decorator';
-  import Video from '@/components/Video.vue';
-  import InfoText from '@/components/InfoText.vue';
-  import Dot from '@/components/Dot.vue';
+  import Info from '@/components/Info.vue';
   import Typer from '@/components/Typer.vue';
   import Slider from '@/components/Slider.vue';
   import Footer, {Button} from '@/components/Footer.vue';
 
   @Component({
     components: {
-      Video,
-      InfoText,
-      Dot,
+      Info,
       Typer,
       Slider,
       Footer,
@@ -54,8 +49,15 @@
     ];
     private videoVisible: boolean = false;
 
-    //TODO: this variable is used in child component
+    private videoToggle() {
+      this.videoVisible = !this.videoVisible;
+    }
+
     private infoTextVisible: boolean = false;
+
+    private infoTextToggle() {
+      this.infoTextVisible = !this.infoTextVisible;
+    }
   }
 </script>
 
@@ -67,48 +69,19 @@
     height: 86%;
   }
 
-  .background {
-    width: 100%;
-    height: 100%;
-  }
-
-  .video-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    visibility: hidden;
-  }
-
-  .video-container.visible {
-    visibility: visible;
-  }
-
-  .overlay {
-    width: 100%;
-    height: 100%;
-    opacity: 0.85;
-    background-color: black;
-  }
-
-  .video-dot {
+  .video-icon {
     position: absolute;
-    top: 26%;
-    left: 51%;
+    top: 13%;
+    left: 32%;
     opacity: 0;
     animation: appear 2s forwards;
     animation-delay: 1s;
   }
 
-  .info-text-dot {
+  .info-text {
     position: absolute;
-    top: 36%;
-    left: 61%;
+    top: 13%;
+    left: 73%;
     opacity: 0;
     animation: appear 2s forwards;
     animation-delay: 3s;
@@ -142,14 +115,11 @@
     top: 53%;
     left: 78%;
     height: 22%;
-    opacity: 0;
-    animation: appear 2s forwards;
-    animation-delay: 4s;
   }
 
   .text-container {
     position: absolute;
-    width: 45%;
+    width: 40%;
     height: 24%;
     top: 76%;
     left: 36%;
@@ -159,5 +129,36 @@
     opacity: 0;
     animation: appear 2s forwards;
     animation-delay: 5s;
+  }
+
+  .info-graph {
+    width: 696px;
+    height: 780px;
+    max-width: 80.31vh;
+    max-height: 90vh;
+  }
+
+  #video {
+       max-width: 90vw;
+       max-height: 50.625vw;
+     }
+
+  @media (min-aspect-ratio: 16/9) {
+    #video {
+      max-width: 160vh;
+      max-height: 90vh;
+    }
+  }
+
+  .info-graph {
+    max-width: 80.31vh;
+    max-height: 90vh;
+  }
+
+  @media (max-aspect-ratio: 1392/1560) {
+    .info-graph {
+      max-width: 90vw;
+      max-height: 100.86vw;
+    }
   }
 </style>
