@@ -41,7 +41,7 @@
   .audio {
     position: absolute;
     text-align: center;
-    width: 5vw;
+    width: 100%;
     bottom: 0;
     right: 0;
   }

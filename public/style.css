@@ -9,8 +9,9 @@ a {
 }
 
 .icon {
-  width: 4.5vw;
-  height: 4.5vw;
+  width: 3vw;
+  height: 3vw;
+  cursor: pointer;
 }
 
 .fill {

@@ -33,6 +33,7 @@
   import Typer from '@/components/Typer.vue';
   import Slider from '@/components/Slider.vue';
   import Footer, {Button} from '@/components/Footer.vue';
+  // import {JQuery} from 'fancybox';
 
   @Component({
     components: {
@@ -47,6 +48,11 @@
       {name: 'GIVE', link: '/give'},
       {name: 'NEGOTIATE', link: '/negotiate'},
     ];
+
+    // mounted(){
+    //   JQuery.
+    // }
+
     private videoVisible: boolean = false;
 
     private videoToggle() {
@@ -139,9 +145,9 @@
   }
 
   #video {
-       max-width: 90vw;
-       max-height: 50.625vw;
-     }
+    max-width: 90vw;
+    max-height: 50.625vw;
+  }
 
   @media (min-aspect-ratio: 16/9) {
     #video {
@@ -151,14 +157,14 @@
   }
 
   .info-graph {
-    max-width: 80.31vh;
+    max-width: 82.54vh;
     max-height: 90vh;
   }
 
-  @media (max-aspect-ratio: 1392/1560) {
+  @media (max-aspect-ratio: 940/1025) {
     .info-graph {
       max-width: 90vw;
-      max-height: 100.86vw;
+      max-height: 98.14vw;
     }
   }
 </style>
