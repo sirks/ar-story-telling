@@ -5,10 +5,14 @@
       <div class='text-container'>
         Do you protest or do you jump over to the bigger boat?
       </div>
-      <Slider
-        story='The militants take your money and let you go. When you arrive at the port, the boat is already full with people. Smugglers ensure that further in the international waters another, bigger boat awaits. When your reach the bigger boat, you can see that it is very crowded as well. The smuggler tells everybody on your boat that you need to jump over to the other boat. It is very windy, the waves are big and it makes it very hard for you and your family to jump over. Some people start to protest towards smugglers saying, that they will stay on the small boat. They ask for your support to do the same.'
-        audioSrc='/audio/give.mp3'
-      ></Slider>
+      <Slider audioSrc='/audio/give.mp3' side='right'>
+        The militants take your money and let you go. When you arrive at the port, the boat is already full with people.
+        Smugglers ensure that further in the international waters another, bigger boat awaits. When your reach the
+        bigger boat, you can see that it is very crowded as well. The smuggler tells everybody on your boat that you
+        need to jump over to the other boat. It is very windy, the waves are big and it makes it very hard for you and
+        your family to jump over. Some people start to protest towards smugglers saying, that they will stay on the
+        small boat. They ask for your support to do the same.
+      </Slider>
     </div>
     <Footer :buttons='buttons'></Footer>
   </div>
@@ -59,6 +63,7 @@
 
   .text-container {
     position: absolute;
+    color: white;
     width: 39%;
     height: 16%;
     top: 76%;

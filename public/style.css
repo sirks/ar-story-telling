@@ -4,6 +4,10 @@ body {
   font-size: 2vw;
 }
 
+.solid-font{
+  font-family: 'Alike';
+}
+
 a {
   cursor: pointer;
 }

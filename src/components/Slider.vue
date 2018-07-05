@@ -1,14 +1,14 @@
 <template>
-  <div class='slider' :class="{ open: isOpen }">
+  <div class='slider' :class="[side, { open: isOpen }]">
     <div @click="isOpen=!isOpen" class='open-bar'>
       <div class='overlay fill'>
         <img class="slide icon" src='../assets/left-arrow-slide.png'>
+        <Audio :audioSrc='audioSrc'></Audio>
       </div>
-      <Audio :audioSrc='audioSrc'></Audio>
     </div>
     <div class='content'>
       <div class='story'>
-        {{story}}
+        <slot></slot>
       </div>
     </div>
   </div>
@@ -24,8 +24,8 @@
     },
   })
   export default class Slider extends Vue {
-    @Prop() private story!: string;
     @Prop() private audioSrc!: string;
+    @Prop() private side!: 'right' | 'bottom';
 
     private isOpen: boolean = false;
   }
@@ -35,30 +35,75 @@
   .slider {
     position: absolute;
     display: flex;
+  }
+
+  .slider.right {
     top: 0;
     left: 96vw;
     height: 100%;
-    width: 70vw;
     transition: left 1s;
   }
 
-  .slider.open {
+  .slider.right.open {
     left: 35vw;
   }
 
-  .open-bar img.slide {
-    position: absolute;
-    top: 40%;
-    transition: transform 1s;
+  .slider.right .content {
+    width: 65vw;
   }
 
-  .slider.open .open-bar img.slide {
+  .slider.right.open .open-bar img.slide {
     transform: rotate(180deg);
+  }
+
+  .slider.right .open-bar {
+    width: 4vw;
+  }
+
+  .slider.right .content .story {
+    padding: 1vw;
+  }
+
+  .slider.bottom {
+    top: calc(100% - 4vw);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    transition: top 1s;
+  }
+
+  .slider.bottom.open {
+    top: 0;
+  }
+
+  /*.slider.bottom .content {*/
+    /*height: calc(100% - 4vw);*/
+  /*}*/
+
+  .slider.bottom .open-bar img.slide {
+    transform: rotate(90deg);
+  }
+
+  .slider.bottom.open .open-bar img.slide {
+    transform: rotate(270deg);
+  }
+
+  .slider.bottom .open-bar {
+    height: 4vw;
+  }
+
+  .slider.bottom .content .story {
+    padding: 0 10vw 10vw;
   }
 
   .open-bar {
     position: relative;
-    width: 4vw;
+  }
+
+  .open-bar img.slide {
+    position: absolute;
+    transition: transform 1s;
   }
 
   .open-bar .overlay {
@@ -70,12 +115,6 @@
   }
 
   .content {
-    width: 65vw;
     background-color: white;
-    opacity: 0.9;
-  }
-
-  .content * {
-    padding: 2%;
   }
 </style>

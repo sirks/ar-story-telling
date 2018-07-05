@@ -1,5 +1,5 @@
 <template>
-  <div class='audio' @click.stop='toggleAudio'>
+  <div class='audio icon' @click.stop='toggleAudio'>
     <img class='icon' v-if="$store.state.audioPlaying" src='../assets/pause.png'>
     <img class='icon' v-else src='../assets/play.png'>
     <audio ref="audioRef">
@@ -41,7 +41,7 @@
   .audio {
     position: absolute;
     text-align: center;
-    width: 4vw;
+    margin: 0.5vw;
     bottom: 0;
     right: 0;
   }
