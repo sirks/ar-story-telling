@@ -1,0 +1,23 @@
+{
+  "name": "ar",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "serve": "webpack-dev-server --host 0.0.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aframe": "^0.8.2",
+    "lodash": "^4.17.11",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.5.2",
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0"
+  }
+}

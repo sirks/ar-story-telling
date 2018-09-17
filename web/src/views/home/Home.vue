@@ -47,6 +47,7 @@
   export default class Home extends Vue {
     private readonly buttons: Button[] = [
       {name: 'GIVE', link: '/give'},
+      {name: 'TAKE', link: '/give'},
       {name: 'NEGOTIATE', link: '/negotiate'},
     ];
 
