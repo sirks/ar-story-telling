@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import aframe from 'aframe';
 
 function component() {
   let element = document.createElement('div');
