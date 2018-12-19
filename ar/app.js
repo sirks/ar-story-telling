@@ -1,10 +1,12 @@
-import _ from 'lodash';
+import aframe from 'aframe';
 
-function component() {
-  let element = document.createElement('div');
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+window.onload = () => {
+  document.getElementById('path_1').addEventListener('markerFound', () => window.location.href = 'test.html');
+  document.getElementById('beatle').addEventListener('markerFound', () => window.location.href = 'test1.html');
+};
 
-  return element;
-}
-
-document.body.appendChild(component());
+const addListener=(link)=>{
+  debugger;
+  this.addEventListener('markerFound', () => window.location.href = link
+  )
+};

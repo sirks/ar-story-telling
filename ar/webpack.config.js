@@ -4,7 +4,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './app.js',
-  mode: 'production',
+  mode: 'development',
+  devtool: 'inline-source-map',
   output: {
     filename: 'app.js',
     path: path.resolve(__dirname, 'dist')
@@ -15,8 +16,3 @@ module.exports = {
     }])
   ]
 };
-
-// const devServer = new WebpackDevServer(compiler, {
-//   ...serverConfig,
-//   https: true
-// });
